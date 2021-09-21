@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <input type="checkbox" id="nav-check" style="display: none";/>
+        <input type="checkbox" id="nav-check" style="display: none" ; />
         <nav>
             <aside id="logo">
                 <h2><a href="#">SM</a></h2>
@@ -29,18 +29,39 @@
         </nav>
     </header>
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-        </section>
-        <section id="experience">
-            Experience Section
-        </section>
-        <section id="work">
-            Work Section
-        </section>
-        <section id="contact">
-            Contact Section
-        </section>
+        <aside id="socials">
+            <ul>
+                <li>
+                    <i class="fa fa-github"></i>
+                </li>
+                <li>
+                    <i class="fa fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fa fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fa fa-linkedin"></i>
+                </li>
+            </ul>
+        </aside>
+        <div id="sections-container">
+            <section id="about" class="section left">
+                <h2 class="section-heading">About Me </h2>
+            </section>
+            <section id="experience" class="section right">
+                <h2 class="section-heading">Experience Section </h2>
+            </section>
+            <section id="work" class="section left">
+                <h2 class="section-heading">Work</h2>
+            </section>
+            <section id="contact" class="section right">
+                <h2 class="section-heading">Contact Section</h2>
+            </section>
+        </div>
+        <aside id="email">
+            <a href="mailto:ofshubham@outlook.com">ofshubham@outlook.com</a>
+        </aside>
     </main>
     <footer>
         Footer

@@ -22,7 +22,7 @@ nav {
 nav a{
     text-decoration: none;
     color: inherit;
-    padding: 3px;
+    padding: 3px
 }
 
 nav li a::before{
@@ -32,7 +32,8 @@ nav li a::before{
 }
 
 nav a:hover {
-    color: var(--fontSecondary)
+    color: var(--fontSecondary);
+    transition: color 1s;
 }
 
 nav a:focus{
@@ -111,9 +112,31 @@ main{
 #socials {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
+    height: 100vh;
 }
+
+#socials ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%
+}
+
+#socials ul a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5em;
+}
+
+#socials ul a:hover {
+    color: var(--fontSecondary);
+    transition: color 1s;
+}
+
 
 #sections-container {
     display: flex;
@@ -131,39 +154,43 @@ main{
     margin-right: 1em;
     margin-top: 3em;
     flex-grow: 1;
+    height: 100vh;
 }
 
 #email a {
     text-decoration: none;
     color: inherit;
 }
-#socials ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%
-}
+
 
 .section {
     display: flex;
+    flex-direction: column;
+    margin:0 2em;
 }
 
 .section.left {
-    justify-content: flex-start;
+    align-items: flex-start;
 }
 .section.right{
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-/* .section-heading::after{
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-heading::after{
     display: inline-block;
     content: "";
-    border-top: .1rem solid;
+    
     width: 9rem;
 }
 .section-heading::before {
     counter-increment: sectionHeadingCounter;
     content: counter(sectionHeadingCounter, decimal-leading-zero)". ";
+    color: var(--fontSecondary)
 
-} */
+}

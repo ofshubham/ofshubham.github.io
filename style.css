@@ -1,0 +1,104 @@
+:root {
+    --backgroundPrimary: #0A192F;
+    --fontPrimary: #A7B2D0;
+    --fontSecondary: #64ffda;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    color: var(--fontPrimary);
+    background-color: var(--backgroundPrimary);
+    counter-reset: a;
+}
+
+nav {
+    height: 2.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav a{
+    text-decoration: none;
+    color: inherit;
+    padding: 3px;
+}
+
+nav li a::before{
+    counter-increment: a;
+    content: counter(a, decimal-leading-zero)". ";
+    color: var(--fontSecondary);
+}
+
+nav a:hover {
+    color: var(--fontSecondary)
+}
+
+nav a:focus{
+    border: 2px dashed var(--fontSecondary)
+}
+
+
+
+aside#logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1em;
+    color:var(--fontSecondary)
+}
+
+ul {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin:0;
+    height: 100%;
+}
+
+li {
+    margin-right: 1.5em;
+}
+
+label#checkBtn {
+    display: none;
+    color: inherit;
+}
+
+section {
+    padding: 5px 10px;
+}
+
+@media (max-width: 600px){
+    
+    label#checkBtn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 1.5em;
+        z-index: 3; 
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        z-index: 2;
+        left: -120%;
+        transition: all 1s;
+        background-color: var(--backgroundPrimary);
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    input#nav-check:checked ~ nav ul{
+            left: 0;
+    }
+    nav ul li{
+        margin-top: 2em;
+    }
+}

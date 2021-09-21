@@ -57,7 +57,9 @@ aside#logo{
     justify-content: flex-start;
     align-items: center;
     margin-left: 1em;
-    color:var(--fontSecondary)
+    color:var(--fontSecondary);
+    -webkit-transform: rotate(-4deg); 
+    -moz-transform: rotate(-4deg); 
 }
 
 nav ul {
@@ -95,20 +97,24 @@ label#checkBtn {
     }
     nav ul{
         position: fixed;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         text-align: center;
         z-index: 2;
         left: -120%;
         transition: all 1s;
         background-color: var(--backgroundPrimary);
+        opacity: 0.96;
         flex-direction: column;
-        justify-content: center;
-        
+        justify-content: flex-start;
     }
 
     nav ul li {
-        vertical-align: middle;
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        
+        
     }
     input#nav-check:checked ~ nav ul{
             left: 0;

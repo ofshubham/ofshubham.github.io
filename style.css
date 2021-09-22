@@ -1,278 +1,305 @@
 :root {
-    --backgroundPrimary: #0A192F;
-    --lightBackgroundPrimary: #112240;
-    --fontPrimary: #A7B2D0;
-    --fontSecondary: #64ffda;
-    /* --backgroundPrimary: black;
+  --backgroundPrimary: #0a192f;
+  --lightBackgroundPrimary: #112240;
+  --fontPrimary: #a7b2d0;
+  --fontSecondary: #64ffda;
+  /* --backgroundPrimary: black;
     --fontPrimary: #A7B2D0;
     --fontSecondary: orange; */
 }
 
-html, body {
-    padding: 0;
-    margin: 0;
-    color: var(--fontPrimary);
-    background-color: var(--backgroundPrimary);
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--fontPrimary);
+  background-color: var(--backgroundPrimary);
+  transition: all 2s;
 }
-header{
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    background-color: var(--backgroundPrimary);
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--backgroundPrimary);
 }
 
 nav {
-    height: 2.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    counter-reset: navLinks;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  counter-reset: navLinks;
 }
 
-nav a{
-    text-decoration: none;
-    color: inherit;
-    padding: 3px
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 3px;
 }
 
-nav li a::before{
-    counter-increment: navLinks;
-    content: counter(navLinks, decimal-leading-zero)". ";
-    color: var(--fontSecondary);
+nav li a::before {
+  counter-increment: navLinks;
+  content: counter(navLinks, decimal-leading-zero) ". ";
+  color: var(--fontSecondary);
 }
 
 nav a:hover {
-    color: var(--fontSecondary);
-    transition: color 1s;
+  color: var(--fontSecondary);
+  transition: color 1s;
 }
 
-nav a:focus{
-    border: 2px dashed var(--fontSecondary)
+nav a:visited {
+  border: 2px dashed var(--fontSecondary);
 }
 
-
-
-aside#logo{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 1em;
-    color:var(--fontSecondary);
-    -webkit-transform: rotate(-4deg); 
-    -moz-transform: rotate(-4deg); 
+aside#logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1em;
+  color: var(--fontSecondary);
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
 }
 
 nav ul {
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin:0;
-    height: 100%;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  height: 100%;
 }
 
 nav li {
-    margin-right: 1.5em;
+  margin-right: 1.5em;
 }
 
 label#checkBtn {
-    display: none;
-    color: inherit;
+  display: none;
+  color: inherit;
 }
 
+@media (max-width: 600px) {
+  label#checkBtn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1em;
+    z-index: 3;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  nav ul {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    z-index: 2;
+    left: -120%;
+    transition: all 1s;
+    background-color: var(--backgroundPrimary);
+    opacity: 0.96;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-
-@media (max-width: 600px){
-    
-    label#checkBtn {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-right: 1em;
-        z-index: 3;
-        cursor: pointer; 
-        font-size: 1.5em;
-    }
-    nav ul{
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        text-align: center;
-        z-index: 2;
-        left: -120%;
-        transition: all 1s;
-        background-color: var(--backgroundPrimary);
-        opacity: 0.96;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        width: 50%;
-        display: flex;
-        justify-content: flex-start;
-        
-        
-    }
-    input#nav-check:checked ~ nav ul{
-            left: 0;
-    }
-    nav ul li{
-        margin-top: 2em;
-    }
+  nav ul li {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  input#nav-check:checked ~ nav ul {
+    left: 0;
+  }
+  nav ul li {
+    margin-top: 2em;
+  }
+  section.align-content-row {
+      flex-direction: column;
+  }
+  .section-content #subsection-menu ul {
+    flex-direction: row !important;
+  }
 }
 
 /*Sections*/
-main{
-    counter-reset: sectionHeadingCounter;
-    display: flex;
-    justify-content: space-between;
+main {
+  counter-reset: sectionHeadingCounter;
+  display: flex;
+  justify-content: space-between;
 }
 
-
-
-#hero .hero-colored-text{
-    color: var(--fontSecondary)
+#hero .hero-colored-text {
+  color: var(--fontSecondary);
 }
 
 #socials {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    height: 100vh;
-    margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 100vh;
+  margin-top: 2.5em;
 }
 
 #socials ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
 }
 
 #socials ul a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.5em;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5em;
 }
 
 #socials ul a:hover {
-    color: var(--fontSecondary);
-    transition: color 1s;
+  color: var(--fontSecondary);
+  transition: color 1s;
 }
 
-
 #sections-container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 8;
-    
+  display: flex;
+  flex-direction: column;
+  flex-grow: 8;
 }
 
 #email {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    writing-mode: vertical-lr;
-    letter-spacing: 0.1em;
-    margin-right: 1em;
-    flex-grow: 1;
-    height: 100vh;
-    margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.1em;
+  margin-right: 1em;
+  flex-grow: 1;
+  height: 100vh;
+  margin-top: 2.5em;
 }
 
 #email a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-
 
 .section {
-    display: flex;
-    flex-direction: column;
-    margin:0 2em;
-    margin-top: 2.5em;
-    scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 3em;
+  scroll-behavior: smooth;
 }
 
-.left-flex{
-    align-items: flex-start;
+.left-flex {
+  align-items: flex-start;
 }
-.right-flex{
-    align-items: flex-end;
+.right-flex {
+  align-items: flex-end;
 }
-.center-flex{
-    align-items: center;
-}
-
-
-.section-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
+.center-flex {
+  align-items: center;
 }
 
-.align-content-row{
-    flex-direction: row;
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.align-content-row {
+  flex-direction: row;
 }
 
 .section-content #subsection-menu {
-    margin-right: 1em;
-    display: flex;
+  margin-right: 1em;
+  display: flex;
 }
-.section-content #subsection-menu ul{
-    margin: 0;
-    padding: 0;
-    height:100%;
-    display: flex;
-    flex-direction: column;
+.section-content #subsection-menu ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-content #subsection-menu li {
-    width:100%;
-    height: 100%;
-    list-style: none;
+  width: 100%;
+  height: 100%;
+  list-style: none;
 }
 
-.section-content #subsection-menu li button {
-    height: 100%;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: inherit;
-    padding: 10px;
+.section-content #subsection-menu li a button {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 10px;
 }
 
-.section-content #subsection-menu li button:hover{
-    background-color: var(--lightBackgroundPrimary);
+.section-content #subsection-menu li a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.section-content #subsection-menu li button:focus{
-    color: var(--fontSecondary);
-    background-color: var(--lightBackgroundPrimary);
+.section-content #subsection-menu li a button:hover {
+  background-color: var(--lightBackgroundPrimary);
+}
+
+.section-content #subsection-menu li a button::selection {
+  color: var(--fontSecondary);
+  background-color: var(--lightBackgroundPrimary);
 }
 
 #panel-holder {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start ;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
+/* section#panel-holder div {
+    display: block;
+} */
 
+/* section#panel-holder div.panel-0 {
+    display: block;
+} */
+.panel:not(:target) {
+  display: none;
+}
+#panel-0 {
+  display: block;
+}
+#panel-1:target ~ #panel-0,
+#panel-2:target ~ #panel-0 {
+  display: none;
+}
+
+/* section#panel-holder div#panel-0:target{
+    display: block;
+}
+
+section#panel-holder div#panel-1:target{
+    display: block;
+}
+
+section#panel-holder div#panel-2:target{
+    display: block;
+} */
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .section-heading::after{
@@ -281,8 +308,8 @@ footer {
     width: 9rem;
 } */
 .section-heading::before {
-    counter-increment: sectionHeadingCounter;
-    content: counter(sectionHeadingCounter, decimal-leading-zero)". ";
-    color: var(--fontSecondary);
-    font-size: 0.5em;
+  counter-increment: sectionHeadingCounter;
+  content: counter(sectionHeadingCounter, decimal-leading-zero) ". ";
+  color: var(--fontSecondary);
+  font-size: 0.5em;
 }
